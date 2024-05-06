@@ -16,6 +16,7 @@ namespace Piccolo
     struct MainCameraPassInitInfo : RenderPassInitInfo
     {
         bool enble_fxaa;
+        bool enable_lut_grading;
     };
 
     class MainCameraPass : public RenderPass
@@ -82,6 +83,7 @@ namespace Piccolo
 
         bool                                         m_is_show_axis{ false };
         bool                                         m_enable_fxaa{ false };
+        bool                                         m_enable_lut_grading{ false };
         size_t                                       m_selected_axis{ 3 };
         MeshPerframeStorageBufferObject              m_mesh_perframe_storage_buffer_object;
         AxisStorageBufferObject                      m_axis_storage_buffer_object;

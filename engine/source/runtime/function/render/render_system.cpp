@@ -77,6 +77,7 @@ namespace Piccolo
         // initialize render pipeline
         RenderPipelineInitInfo pipeline_init_info;
         pipeline_init_info.enable_fxaa     = global_rendering_res.m_enable_fxaa;
+        pipeline_init_info.enable_lut_grading = global_rendering_res.m_enable_lut_grading;
         pipeline_init_info.render_resource = m_render_resource;
 
         m_render_pipeline        = std::make_shared<RenderPipeline>();

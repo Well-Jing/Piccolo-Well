@@ -27,6 +27,7 @@ namespace Piccolo
 
         const MainCameraPassInitInfo* _init_info = static_cast<const MainCameraPassInitInfo*>(init_info);
         m_enable_fxaa                            = _init_info->enble_fxaa;
+        m_enable_lut_grading = _init_info->enable_lut_grading;
 
         setupAttachments();
         setupRenderPass();
@@ -1971,8 +1972,11 @@ namespace Piccolo
 
         m_rhi->cmdNextSubpassPFN(m_rhi->getCurrentCommandBuffer(), RHI_SUBPASS_CONTENTS_INLINE);
 
-        color_grading_pass.draw();
-
+        if (m_enable_lut_grading)
+        {
+            color_grading_pass.draw();
+        }
+        
         m_rhi->cmdNextSubpassPFN(m_rhi->getCurrentCommandBuffer(), RHI_SUBPASS_CONTENTS_INLINE);
 
         if (m_enable_fxaa)

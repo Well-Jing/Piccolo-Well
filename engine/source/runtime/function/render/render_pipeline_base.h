@@ -15,6 +15,7 @@ namespace Piccolo
     struct RenderPipelineInitInfo
     {
         bool                                enable_fxaa {false};
+        bool                                enable_lut_grading {false};
         std::shared_ptr<RenderResourceBase> render_resource;
     };
 
