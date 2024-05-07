@@ -3,6 +3,7 @@
 #include "runtime/function/render/render_pass.h"
 
 #include "runtime/function/render/passes/color_grading_pass.h"
+#include "runtime/function/render/passes/custom_VFX_pass.h"
 #include "runtime/function/render/passes/combine_ui_pass.h"
 #include "runtime/function/render/passes/fxaa_pass.h"
 #include "runtime/function/render/passes/tone_mapping_pass.h"
@@ -61,6 +62,7 @@ namespace Piccolo
         void preparePassData(std::shared_ptr<RenderResourceBase> render_resource) override final;
 
         void draw(ColorGradingPass& color_grading_pass,
+            CustomVFXPass& custom_VFX_pass,
             FXAAPass& fxaa_pass,
             ToneMappingPass& tone_mapping_pass,
             UIPass& ui_pass,
@@ -69,6 +71,7 @@ namespace Piccolo
             uint32_t          current_swapchain_image_index);
 
         void drawForward(ColorGradingPass& color_grading_pass,
+            CustomVFXPass& custom_VFX_pass,
             FXAAPass& fxaa_pass,
             ToneMappingPass& tone_mapping_pass,
             UIPass& ui_pass,
